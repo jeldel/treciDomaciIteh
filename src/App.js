@@ -1,10 +1,13 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import MenuProduct from './components/MenuProduct';
+import { useState } from 'react';
 
 function App() {
+  
+  const[cartNum, setCartNum] = useState(0);
 
-  const products = [
+  const [products, setProducts] = useState([
     {
       id : 1,
       title: 'Cezar salata',
@@ -33,13 +36,41 @@ function App() {
       description : 'pohovana piletina, susam, pomfrit, tartar sos',
       quantity: 0
     }
+  ]);
 
-  ];
+  const addToCart = (id) => {
+    products.map((product) => {
+      if(product.id === id){
+        product.quantity = product.quantity + 1;
+        const a = cartNum + 1;
+        setCartNum(a);
+        alert("Uspešno ste dodali proizvod u korpu.")
+      }
+    }); 
+  };
+
+  const removeFromCart = (id) => {
+    products.map((product) => {
+      if(product.id === id){
+        if(product.quantity > 0){
+          product.quantity = product.quantity - 1;
+          const a = cartNum - 1;
+          setCartNum(a);
+          alert("Uspešno ste ukolinili proizvod iz korpe.")
+        }
+        else{
+          alert("Količina proizvoda je već 0.")
+        }
+      }
+    });
+  }
+
+
 
   return (
     <div className='App'>
-    <NavBar />
-    <MenuProduct products={products} />
+    <NavBar cartNum = {cartNum} />
+    <MenuProduct products={products} onAdd={addToCart} onRemove={removeFromCart} />
     </div>
   );
 }

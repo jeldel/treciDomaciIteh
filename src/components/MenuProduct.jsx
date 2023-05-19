@@ -1,13 +1,17 @@
 import React from 'react'
 import MenuItem from './MenuItem'
 
-const MenuProduct = ({products}) => {
+const MenuProduct = ({products, onAdd, onRemove}) => {
   return (
     <div className='all-menu-items'>
-        <MenuItem product = {products[0]} />
-        <MenuItem product = {products[1]}/>
-        <MenuItem product = {products[2]}/>
-        <MenuItem product = {products[3]}/>
+        {products.map((product) => (
+        <MenuItem
+        key = {product.id}
+        product={product}
+        onAdd = {onAdd}
+        onRemove = {onRemove} />
+      ))}
+
     </div>
   )
 }
