@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  background-color: aliceblue;
 }
 
 .navBar {
@@ -24,12 +24,13 @@
 }
 
 .card {
-  background-color: aliceblue;
+  background-color:rgb(232, 227, 178);
   border-style: solid;
   border-width: 2px;
   border-color: rgb(211, 211, 211);
   border-radius: 10px;
-  max-width: 200px;
+  width: 220px;
+  height: 500px;
   margin: 30px;
   margin-top: 60px;
 }
@@ -44,20 +45,25 @@
 }
 
 .card-footer {
-  height: 30px;
+  height: 70px;
+  display: inline-block;
 }
 
 .btn {
+  size: 50px;
   background-color: cornflowerblue;
   color: white;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 5px;
-  margin: 7px;
+  margin-left: 20px;
   border-radius: 3px;
   border-width: 0px;
   align-content: center;
+  display: inline-block;
+  padding: 7px 15px;
+}
+
+
+.card-quantity{
+  margin-left: 10px;
 }
 
 
