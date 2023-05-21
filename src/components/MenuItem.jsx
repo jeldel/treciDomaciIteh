@@ -5,7 +5,7 @@ const MenuItem = ({product, onAdd, onRemove, key}) => {
   
   return (
     <div className='card'>
-        <img className="card-img-top" src='https://picsum.photos/200' alt='Slika'/>
+        <img className="card-img-top" src='https://picsum.photos/220' alt='Slika'/>
         <div className='card-body'>
             <h3 className='card-title'>{product.title} </h3>
             <p className='card-text'> {product.description} </p>

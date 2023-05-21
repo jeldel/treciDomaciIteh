@@ -5,7 +5,7 @@
 .navBar {
   display: flex;
   flex-direction: row;
-  background-color:beige;
+  background-color: lightblue;
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: rgb(175, 175, 175);
@@ -13,18 +13,32 @@
   min-height: 40px;
   padding-left:570px;
   font-size: x-large;
+  font-weight: 700;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 
 
 .all-menu-items {
   display:inline-flex;
   width: 100%;
+  background-color: antiquewhite;
+}
+
+/*koristim za ikonicu u navBaru*/
+.contact{
+  margin-left:70px;
+}
+
+/*koristim za ikonicu i kolicinu u navBaru*/
+.cart-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left:70px;
 }
 
 .card {
-  background-color:rgb(232, 227, 178);
+  background-color: lightblue;
   border-style: solid;
   border-width: 2px;
   border-color: rgb(211, 211, 211);
@@ -67,12 +81,24 @@
 }
 
 
-.cart-items {
+.card-img-left {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.card-cart {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin-left: 70px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(211, 211, 211);
+  border-radius: 10px;
+  max-width: 500px;
+  max-height: 190px;
+  background-color: lightblue;
+  margin-bottom: 30px;
 }
+
 
 .cart-num {
   background-color: grey;
@@ -86,9 +112,88 @@
   margin-left: 5px;
 }
 
+.cart-container {
+  background-color: antiquewhite;
+  height: 600px;
+}
+.cart-item{
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.cart-item-main{
+  font-size: 30px;
+  font-weight: 700;
+  color:black;
+  margin-left: 930px;
+}
+
+.cart-item-text{
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+
+
 a {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
 
+.restaurant{
+background-color: antiquewhite;
+height: 600px;
+display: flex;
+flex-direction: row;
+}
+
+.restaurant-item{
+  margin-left: 30px;
+  width: 50%;
+  text-align:justify;
+}
+
+.restaurant-form{
+  width: 50%;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type=text], [type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: large;
+}
+
+button[type=submit]:hover {
+  background-color: #45a049;
+}
+
+textarea[type=message]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

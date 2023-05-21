@@ -1,11 +1,32 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import MenuProduct from './components/MenuProduct';
+import Cart from './components/Cart';
+import Contact from './components/Contact';
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   
   const[cartNum, setCartNum] = useState(0);
+
+  const[cartProducts, setCartProducts] = useState([]);
+
+  const refreshCart = () => {
+    const newProducts = products.filter((product) => product.quantity > 0);
+    setCartProducts(newProducts);
+  };
+
+  const updateCart = (product) => {
+    setCartProducts([...cartProducts,
+    {
+      id : product.id,
+      title : product.title,
+      description : product.description,
+      quantity : product.quantity,
+      price : product.price
+    }]);
+  };
 
   const [products, setProducts] = useState([
     {
@@ -44,6 +65,12 @@ function App() {
         product.quantity = product.quantity + 1;
         const a = cartNum + 1;
         setCartNum(a);
+        if(product.quantity === 1){
+          updateCart(product);
+        }
+        else{
+          refreshCart();
+        }
         alert("Uspešno ste dodali proizvod u korpu.")
       }
     }); 
@@ -56,6 +83,7 @@ function App() {
           product.quantity = product.quantity - 1;
           const a = cartNum - 1;
           setCartNum(a);
+          refreshCart();
           alert("Uspešno ste ukolinili proizvod iz korpe.")
         }
         else{
@@ -68,10 +96,19 @@ function App() {
 
 
   return (
-    <div className='App'>
-    <NavBar cartNum = {cartNum} />
-    <MenuProduct products={products} onAdd={addToCart} onRemove={removeFromCart} />
-    </div>
+    <BrowserRouter>
+      <NavBar cartNum = {cartNum} />
+      <Routes>
+        <Route
+          path = '/'
+          element = {
+            <MenuProduct products={products} onAdd={addToCart} onRemove={removeFromCart} />
+          }
+          />
+        <Route path='/cart' element = {<Cart cartProducts = {cartProducts} />} />
+        <Route path='/contact' element = {<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

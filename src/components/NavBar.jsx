@@ -1,14 +1,17 @@
 import React from 'react';
 import {BsFillCartFill} from 'react-icons/bs';
+import {MdContactPage} from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 function NavBar( {cartNum} ) {
   return (
     <div className='navBar'>
-      <a>Restoran Štutgart</a>
-      <a className='cart-items'>
+      <Link to='/'>Restoran Štutgart</Link>
+      <Link to='/cart' className='cart-items'>
         <BsFillCartFill />
         <div className='cart-num'> {cartNum} </div>
-      </a>
+      </Link>
+      <Link to='/contact ' className='contact'> <MdContactPage /> </Link>
       </div>
   )
 }
