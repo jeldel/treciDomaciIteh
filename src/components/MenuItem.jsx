@@ -9,7 +9,7 @@ const MenuItem = ({product, onAdd, onRemove, key}) => {
         <div className='card-body'>
             <h3 className='card-title'>{product.title} </h3>
             <p className='card-text'> {product.description} </p>
-            <h4 className='card-price'>Cena: {product.price} </h4>
+            <h4 className='card-price'>Cena: {product.price} RSD </h4>
         </div>
 
         <div className='card-footer'>
